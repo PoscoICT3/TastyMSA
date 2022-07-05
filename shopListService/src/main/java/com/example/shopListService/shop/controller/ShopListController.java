@@ -1,0 +1,27 @@
+package com.example.shopListService.shop.controller;
+
+import com.example.shopListService.shop.model.ShopDto;
+import com.example.shopListService.shop.service.ShopListServiceImpl;
+import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import java.util.List;
+
+@RestController
+@Slf4j
+@RequestMapping("shoplist")
+public class ShopListController {
+    @Autowired
+    ShopListServiceImpl shopListService;
+
+    @GetMapping("/rate")
+    public List<ShopDto> getShopRate(){
+
+        return shopListService.getShopGrade();
+    }
+
+
+}
