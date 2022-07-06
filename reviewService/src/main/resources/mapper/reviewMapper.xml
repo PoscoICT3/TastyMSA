@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.example.reviewService.review.repository.ReviewMapper">
+    <insert id="createReview" parameterType="ReviewDto">
+        insert
+        into
+            review(userId,shopId,rate,content,photo)
+        values
+            (#{userId},#{shopId}, #{rate},#{content}, #{photo})
+    </insert>
+    <select id="countReview" parameterType="int">
+        select count *
+        from review
+        where userId = #{userId}
+    </select>
+    <select id="getShopRate" resultType="ReviewRateDto">
+        select shopId, avg(rate) as rate
+        from review
+        group by shopId
+    </select>
+
+
+
+</mapper>
