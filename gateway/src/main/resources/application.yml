@@ -48,42 +48,42 @@ spring:
 #            - Path= /myPage/**
 #          filters:
 ##            - CustomFilter
-#        - id: party-service
-#          uri: lb://PARTY-SERVICE
-#          predicates:
-#            - Path= /party/**
-#          filters:
+        - id: party-service
+          uri: lb://PARTY-SERVICE
+          predicates:
+            - Path= /party/**
+          filters:
 ##            - CustomFilter
 #
-#        - id: shoplist-server
-#          uri: lb://SHOPLIST-SERVICE
-#          predicates:
-#            - Path= /shoplist/**
-#            - Method=GET
-#          filters:
-##            - CustomFilter
+        - id: shoplist-server
+          uri: lb://SHOPLIST-SERVICE
+          predicates:
+            - Path= /shoplist/**
+            - Method=GET
+          filters:
+            - CustomFilter
 #
-#        - id: shopdetail-service
-#          uri: lb://SHOPDETAIL-SERVICE
-#          predicates:
-#              - Path= /shopdetail/**
-#              - Method=GET
-#          filters:
+        - id: shopdetail-service
+          uri: lb://SHOPDETAIL-SERVICE
+          predicates:
+              - Path= /shopdetail/**
+              - Method=GET
+          filters:
 ##              - CustomFilter
 ##              - AuthFilter
 #
-#        - id: chat-service
-#          uri: lb://CHAT-SERVICE
-#          predicates:
-#            - Path= /chat/**
-#          filters:
-##            - CustomFilter
-##            - AuthFilter
+        - id: chat-service
+          uri: lb://CHAT-SERVICE
+          predicates:
+            - Path= /chat/**
+          filters:
+#            - CustomFilter
+#            - AuthFilter
 #
-#        - id: review-service
-#          uri: lb://REVIEW-SERVICE
-#          predicates:
-#              - Path= /review/**
+        - id: review-service
+          uri: lb://REVIEW-SERVICE
+          predicates:
+              - Path= /review/**
 #              - Method=POST
 #          filters:
 #              - CustomFilter
